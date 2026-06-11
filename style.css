@@ -7,7 +7,7 @@
 }
 
 body{
-    font-family: "poppins", sans-serif;
+    font-family: "Google sans", sans-serif;
     display: flex;
     flex-direction: column; 
     min-height: 100vh;   /* volle Bildschirmhöhe */
@@ -120,7 +120,7 @@ main {
     color: #ffff;
     text-decoration: none;
     border-radius: 6px;
-    font-size: 13px;
+    font-size: 11px;
     text-align: left;
     margin-bottom: 15px;
     transition: color 0.9s;        /* weiche Animation beim Hovern */
@@ -184,12 +184,39 @@ main {
     gap: 6px;
     transition: background-color 0.6s;
 }
-.img1{
+
+.hero{
+    position: relative;
     width: 100%;
-    height: 400px;          /* feste Höhe */
+}
+
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+
+}
+.img{
+    width: 100%;
+    height: auto;
+    margin: 1rem ;
+    width: 91%;
+    border-radius: 15px;
+}
+iframe{
+    width: 100%;
+    height: 200px;
+    margin: 1rem ;
+    width: 91%;
+    border-radius: 15px;
+}
+
+.img1{
+    margin-top: 0;
+    width: 100%;
+    height: auto;          /* feste Höhe */
+    border-radius: 0px;
     object-fit: cover;      /* Bild füllt den Bereich ohne Verzerrung */
     object-position: center; /* zentriert */
-    display: block;
 }
 
 .hero-content{
@@ -197,12 +224,63 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 
-.hero-content>h1{
-    font-size: 30px;
+h1,h2,h3,h4,h5{
+    padding: 0 1rem;
 }
+p{
+    font-size: 14px;
+    text-align: left;
+    text-justify: auto;
+    padding: 0 1rem;
+    line-height: 1.4;
+}
+
+section{
+    margin-bottom: 4rem;
+}
+article{
+    margin-bottom: 4rem;
+}
+
+.h1-fifa{
+    text-align: center;  
+}
+.länder{
+    color: #003b89;
+}
+.h3-länder{
+    color: #003b89;
+}
+.p-info-karten{
+    color: #003b89;
+}
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #003b89;
+    padding: 10px;
+}
+.footer-links{
+    align-items: center;
+}
+.footer-links a{
+    color: white;
+    font-size: 11px;
+    transition: color 0.3s;
+}
+
+.text-footer{
+    text-align: center;
+    font-weight: 100;
+    line-height: 1.8;
+    font-size: 11px;
+    color: rgb(255, 255, 255);
+}
+
+
 
 
 /*DESKTOP ANSICHT HOME-PAGE*/

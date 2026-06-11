@@ -1,4 +1,4 @@
-# Mundial26 🏆
+# Mundial26
 
 Informationsseite zur FIFA Fußball-Weltmeisterschaft 2026.
 
