@@ -8,8 +8,8 @@
 
 body{
     font-family: "Google sans", sans-serif;
-    display: flex;
-    flex-direction: column; 
+    display: grid;
+    grid-template-rows: auto 1fr auto;  /* Header, Main, Footer */
     min-height: 100vh;   /* volle Bildschirmhöhe */
 
 }
@@ -27,9 +27,11 @@ html, body{
 }
 
 main {
-    flex: 1;
     width: 100%;
- 
+}
+
+footer{
+    width: 100%;
 }
 
 .hero{
@@ -59,6 +61,10 @@ main {
     color: white;
     align-items: center;
     gap: 18px;
+}
+.logo-mundial-white{
+    color: white;
+    text-decoration: none;
 }
 .buttons{
     display: flex;
@@ -196,20 +202,28 @@ main {
 
 }
 .img{
-    width: 100%;
     height: auto;
     margin: 1rem ;
     width: 91%;
     border-radius: 15px;
 }
 
-iframe{
+.iframe-video1{
+    height: 200px;
+    margin: 1rem ;
+    width: 91%;
+    border-radius: 15px;
+}
+
+.iframe-wrapper{
     width: 100%;
     height: 1200px;
     border: none;
     border-radius: 15px;
-    margin: 0;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
+
 
 .img1{
     margin-top: 0;
@@ -227,24 +241,42 @@ iframe{
     align-items: center;
 }
 
-h1,h2,h3,h4,h5{
-    padding: 0 1rem;
+.info-karten-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-items: center;  
+    text-align: center;      
+}
+
+.gast-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-items: center;  
     text-align: center;
 }
+
+
+h1,h2,h3,h4,h5{
+    padding: 1rem 1rem;
+    text-align: center;
+}
+
 p{
     font-size: 14px;
     text-align: left;
     text-justify: auto;
     padding: 0 1rem;
     line-height: 1.4;
-    text-align: center;
+    text-align: left;
 }
 
 section{
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 article{
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 
 .h1-fifa{
@@ -284,77 +316,273 @@ article{
 }
 
 
+/* Filter-Bereich */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1.25rem;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.filter-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #003b89;
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+/* Teams Grid — CSS Grid responsive ohne Media Query */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin: 0 1rem;
+}
+
+/* Einzelne Team-Karte */
+.team-card {
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+.team-card img {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.team-card h3 {
+    font-size: 0.9rem;
+    color: #003b89;
+    padding: 0;
+    min-height: 1.4em;
+}
+
+.team-card p {
+    font-size: 0.75rem;
+    color: #777;
+    padding: 0;
+}
 
 
-/*DESKTOP ANSICHT HOME-PAGE*/
 
-@media screen and (min-width: 900px) {
+/* Spielplan Widget */
 
-    /* Burger-Button anzeigen */
+
+.iframe-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    max-height: 200vh;     /* jamais plus que 90% de l'écran visible */
+    overflow-y: auto;     /* scroll interne si le contenu dépasse */
+}
+
+.iframe-wrapper iframe {
+    width: 100%;
+    height: 1200px;
+    border: none;
+    border-radius: 12px;
+    display: block;
+    margin: 0;
+}
+
+
+/* DESKTOP und Tablets Landschaft — ab 792px */
+@media screen and (min-width: 792px) {
+ 
+    /* Burger verstecken, Navigation horizontal (Flexbox) */
     .burger {
         display: none;
     }
 
-    .nav-logo img{
-        display: flex;
-        width: auto;
-        height: 25px;
+    .logo-mundial-white{
         margin-left: 40px;
     }
-
+ 
     .wc-logo{
         margin-left: 40px;
         width: 30px;
     }
-
-    /* Navigationsmenü standardmäßig verstecken */
+    
+    .back-btn{
+        margin-right: 40px;
+    }
+ 
     .nav-links {
         display: flex;
-        flex-direction: row; 
+        flex-direction: row;
         position: static;
         width: auto;
         background-color: transparent;
-        padding: 10;
         margin: 0 40px;
-        gap: 80px;
+        gap: 50px;
     }
-
+ 
     .link{
         font-size: 15px;
+        margin-bottom: 0;
     }
-
-    /* Link beim Hovern */
+ 
     .link:hover {
         color: #e5ff00;
     }
-
+ 
+    .container{
+        padding: 0 2rem;
+    }
+ 
     .img1 {
-        height: 600px;
+        height: auto;
+    }
+ 
+    h1 { font-size: 48px; }
+    h2 { font-size: 38px; }
+    h3 { font-size: 28px; }
+    h4 { font-size: 25px; }
+    p  { font-size: 16px; line-height: 1.6; }
+ 
+    /* Hero-Content - Bild und Text nebeneinander mit CSS Grid */
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 1rem;
+    }
+ 
+    /* Info-Karten — 3 Spalten mit CSS Grid */
+    .info-karten-content {
+        grid-template-columns: (repeat(3, 1fr));
+        align-items: start;
+        justify-items: center;
+    }
+ 
+    /* Gastgeberländer — 3 Spalten mit CSS Grid */
+    .gast-content {
+        grid-template-columns: 1fr;
+        align-items: start;
+        justify-items: center;
+    }
+ 
+    .gast-content h2 {
+        grid-column: 1 / -1;
+    }
+ 
+    /* Teams-Grid — größere Karten */
+    .teams-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+ 
+    .iframe-video1 {
+        height: 450px;
+    }
+    .iframe-video2 {
+        height: 250px;
+        margin-bottom: 2rem;
     }
 
-
-
-
-    /* Spielplan Widget */
-
-    .iframe-wrapper {
-        width: 100%;
-        max-width: none;
-        margin: 0 auto;
+    .filters {
+        gap: 5rem;
+        margin-top: 4rem;
+        padding: 1.25rem;
+       
+    }
+    
+    .anstosszeiten {
+        padding: 2rem;
     }
 
-    .iframe-wrapper iframe {
-        width: 100%;
-        height: 1200px;
-        border: none;
-        border-radius: 12px;
-        display: block;
-        margin: 0;
+    .anstosszeiten h1 {
+        font-size: 2.6rem;
     }
 
+    .anstosszeiten p {
+        font-size: 16px;
+        text-align: center;
+    }
 
-
-
+ 
+    /* Footer — nebeneinander mit CSS Grid */
+    .footer-container {
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        text-align: left;
+        justify-items: start;
+        padding: 1.5rem 2rem;
+    }
+ 
+    .text-footer {
+        font-size: 13px;
+        text-align: center;
+    }
+ 
 }
+ 
+ 
+/* LARGE DESKTOP — ab 1200px */
+@media screen and (min-width: 1200px) {
+ 
+    .img1 {
+        height: 650px;
+    }
+ 
+    h1 { font-size: 58px;  margin-top: 3rem;}
+    h2 { font-size: 48px; }
+    h3 { font-size: 38px; }
+    h4 { font-size: 35px; }
+    p  { font-size: 18px; line-height: 1.6; }
+ 
+    .container {
+        padding: 0 1rem;
+    }
+ 
+    .iframe-video1 {
+        height: 500px;
+    }
+
+    .iframe-video2 {
+        margin-bottom: 4rem;
+    }
+
+    .filter-group label {
+        font-size: 1rem;
+        font-weight: 600;
+        
+    }
+
+ 
+}
+
+
 
 

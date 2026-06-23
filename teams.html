@@ -26,13 +26,10 @@
 
             <!--Logo-->
             <div class="logo-text">
-                    MUNDIAL26
+                <a href="index.html" class="logo-mundial-white">MUNDIAL26</a>
             </div>
 
             <div class="buttons">
-                <button class="search-icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
 
                 <!--Burger-Button (nur auf Mobilgeräten sichtbar)-->
                 <button class="burger" id="burgerBtn" aria-label="Menü öffnen">
@@ -46,8 +43,8 @@
             <!--Navigationslinks-->
             <nav class="nav-links" id="navLinks">
                 <a href="index.html" class="link">HOME</a>
-                <a href="spielplan.html" class="link">SPIELPLAN</a>
                 <a href="teams.html" class="link">TEAMS</a>
+                <a href="spielplan.html" class="link">SPIELPLAN</a>
                 <a href="quiz.html" class="link">QUIZ</a>
             </nav>
 
@@ -73,6 +70,83 @@
     </div>
 
     <main>
+
+        <!-- HERO DER TEAMS-SEITE -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="h1-fifa">DIE 48 TEILNEHMERTEAMS</h1>
+                    <img src="images/All-FWC-2026-qualified-teams-16x9.avif" class="img" alt="WM-teams">
+                    <p>Geschichte im Anschnitt</p><br>
+                    <p>Zum ersten Mal in der Geschichte der FIFA Fußball-Weltmeisterschaft kämpfen 48 Nationen aus allen sechs Kontinenten um den begehrten Pokal.
+                        <br>Von etablierten Großmächten bis hin zu mutigen Debütanten - jedes Team bringt seine eigene Geschichte mit auf die größte Bühne des Weltfußballs.
+                        <br> Entdecke alle Teams, ihre Gruppen und ihre Geschichten auf <strong>Mundial26.</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- FILTER -->
+        <section class="filter-section">
+            <div class="container">
+                <div class="filters">
+
+                    <div class="filter-group">
+                        <label for="searchTeam">Team suchen</label>
+                        <input type="text" id="searchTeam" placeholder="z.B. Deutschland..." />
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filterGruppe">Gruppe</label>
+                        <select id="filterGruppe">
+                            <option value="all">Alle Gruppen</option>
+                            <option value="A">Gruppe A</option>
+                            <option value="B">Gruppe B</option>
+                            <option value="C">Gruppe C</option>
+                            <option value="D">Gruppe D</option>
+                            <option value="E">Gruppe E</option>
+                            <option value="F">Gruppe F</option>
+                            <option value="G">Gruppe G</option>
+                            <option value="H">Gruppe H</option>
+                            <option value="I">Gruppe I</option>
+                            <option value="J">Gruppe J</option>
+                            <option value="K">Gruppe K</option>
+                            <option value="L">Gruppe L</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAMS GRID -->
+        <section class="teams-section">
+            <div class="container">
+                <h2>Alle Teams im Überblick</h2>
+                <div class="teams-grid" id="teamsContainer">
+                    <!-- wird von JavaScript befüllt -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- STATS -->
+        <article class="info-karten">
+            <div class="container">
+                <div class="info-karten-content">
+
+                    <h2>Vier neue Gesichter bei der WM 2026</h2>
+                    <p class="p-info-karten">Geschichte wird geschrieben: Kap Verde, Curaçao, Jordanien und Usbekistan feiern ihre allererste WM-Teilnahme. Für diese vier Nationen ist bereits die Qualifikation ein historischer Erfolg - und ein Beweis dafür, wie sehr sich der Fußball weltweit weiterentwickelt.</p>
+
+                    <h2>Wer wird Weltmeister 2026?</h2>
+                    <p class="p-info-karten">Titelverteidiger Argentinien mit Lionel Messi trifft in der Gruppenphase auf Algerien, Österreich und Jordanien. Auf der anderen Seite des Turnierbaums kämpfen Frankreich, Brasilien und Spanien um ihre Chance auf den Titel. Cristiano Ronaldos letzter WM-Auftritt für Portugal sorgt für zusätzliche Spannung.</p><br>
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/68Ov7NZNzfc" class="iframe-video2" title="FIFA World Cup 2026™ | Official Trailer | LIVE, FREE and EXCLUSIVE on SBS &amp; SBS on Demand" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
+            </div>
+        </article>
+
         
 
     </main>
