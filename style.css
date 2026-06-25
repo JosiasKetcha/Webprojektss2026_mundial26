@@ -1,6 +1,4 @@
-/* ========================================
-   STARTSEITE (HOME-PAGE)
-   ======================================== */
+/* STARTSEITE (HOME-PAGE)*/
 
 * {
     box-sizing: border-box;
@@ -41,9 +39,7 @@ footer {
 }
 
 
-/* ========================================
-   NAVIGATION
-   ======================================== */
+/* NAVIGATION */
 
 .navbar {
     background-color: #003b89;
@@ -134,9 +130,7 @@ footer {
 }
 
 
-/* ========================================
-   SCHWARZER BANNER
-   ======================================== */
+/* SCHWARZER BANNER */
 
 .black-banner {
     background-color: #000000;
@@ -202,9 +196,7 @@ footer {
 }
 
 
-/* ========================================
-   CONTAINER & BILDER
-   ======================================== */
+/* CONTAINER & BILDER */
 
 .container {
     max-width: 1140px;
@@ -236,9 +228,7 @@ footer {
 }
 
 
-/* ========================================
-   HERO & CONTENT
-   ======================================== */
+/* HERO & CONTENT */
 
 .hero-content {
     display: flex;
@@ -264,9 +254,7 @@ footer {
 }
 
 
-/* ========================================
-   TYPOGRAPHIE
-   ======================================== */
+/* TYPOGRAPHIE */
 
 h1, h2, h3, h4, h5 {
     padding: 1rem 1rem;
@@ -305,9 +293,7 @@ article {
 }
 
 
-/* ========================================
-   FOOTER
-   ======================================== */
+/* FOOTER */
 
 .footer-container {
     display: flex;
@@ -337,9 +323,7 @@ article {
 }
 
 
-/* ========================================
-   TEAMS-SEITE
-   ======================================== */
+/* TEAMS-SEITE */
 
 .filters {
     display: flex;
@@ -418,13 +402,16 @@ article {
 }
 
 
-/* ========================================
-   SPIELPLAN-SEITE
-   ======================================== */
+/* SPIELPLAN-SEITE */
+
+.spielplan-section {
+    display: grid;
+    justify-items: center;
+    padding: 2rem 0;
+}
 
 .spielplan-header {
     text-align: center;
-    margin-bottom: 2rem;
 }
 
 .spielplan-header h1 {
@@ -432,6 +419,7 @@ article {
     color: #003b89;
     padding: 0;
     margin-bottom: 0.5rem;
+    margin-top: 2rem;
 }
 
 .spielplan-intro {
@@ -445,9 +433,15 @@ article {
 
 .anstosszeiten-wrapper {
     text-align: center;
+    display: grid;
+    justify-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 2rem;
 }
 
 .anstosszeiten-wrapper h2 {
+    text-align: center;
     font-size: 1.8rem;
     color: #003b89;
     padding: 0;
@@ -462,7 +456,9 @@ article {
 }
 
 .widget-box {
-    max-width: 950px;
+    display: grid;
+    justify-items: center;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 1.5rem 1rem;
     background: white;
@@ -472,26 +468,23 @@ article {
 
 .iframe-wrapper {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    justify-items: center;
+    box-sizing: border-box;
+   
 }
 
 .widget-iframe {
     width: 100%;
-    max-width: 900px;
-    height: 900px;
+    height: 1800px;
     border: none;
     border-radius: 12px;
     background: white;
-    display: block;
-    margin: 0 auto;
+    padding: 0 15rem;
 }
 
 
-/* ========================================
-   QUIZ-SEITE
-   ======================================== */
+/* QUIZ-SEITE */
 
 .quiz-section {
     padding: 2rem 1rem;
@@ -511,7 +504,7 @@ article {
     margin-bottom: 1.5rem;
 }
 
-/* ----- Fortschrittsbalken ----- */
+/* Fortschrittsbalken */
 .progress-bar {
     max-width: 400px;
     height: 6px;
@@ -535,7 +528,7 @@ article {
     margin-bottom: 1.5rem;
 }
 
-/* ----- Quiz-Container ----- */
+/* Quiz-Container */
 #quizContainer {
     display: flex;
     flex-direction: column;
@@ -543,7 +536,7 @@ article {
     width: 100%;
 }
 
-/* ----- Quiz-Karte ----- */
+/* Quiz-Karte */
 .quiz-card {
     background: white;
     border-radius: 16px;
@@ -561,7 +554,7 @@ article {
     border-bottom: 2px solid #f0f0f0;
 }
 
-/* ----- Antwort-Buttons ----- */
+/* Antwort-Buttons */
 .answers {
     display: grid;
     gap: 0.8rem;
@@ -600,7 +593,7 @@ article {
     opacity: 0.7;
 }
 
-/* ----- Next Button ----- */
+/* Next Button */
 #nextBtn {
     display: block;
     margin: 0 auto;
@@ -624,7 +617,7 @@ article {
     cursor: default;
 }
 
-/* ----- Ergebnis ----- */
+/* Ergebnis */
 #resultBox {
     display: none;
     text-align: center;
@@ -667,9 +660,7 @@ article {
 }
 
 
-/* ========================================
-   RESPONSIVE: TABLETS & DESKTOP ab 792px
-   ======================================== */
+/* RESPONSIVE: TABLETS & DESKTOP ab 792px */
 
 @media screen and (min-width: 792px) {
 
@@ -815,6 +806,7 @@ article {
 
     .widget-iframe {
         height: 1200px;
+        padding: 0 15rem;
     }
 
     /* Quiz */
@@ -828,9 +820,7 @@ article {
 }
 
 
-/* ========================================
-   RESPONSIVE: LARGE DESKTOP ab 1200px
-   ======================================== */
+/* RESPONSIVE: LARGE DESKTOP ab 1200px */
 
 @media screen and (min-width: 1200px) {
 
@@ -880,4 +870,9 @@ article {
     .widget-iframe {
         height: 1400px;
     }
+    .widget-box{
+        width: 1000px;
+    }
+
+   
 }

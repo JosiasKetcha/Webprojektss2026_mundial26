@@ -27,9 +27,7 @@ backBtn.addEventListener("click", function() {
 });
 
 
-/* ========================================
-   TEAMS-SEITE — Daten und Filter
-   ======================================== */
+/* TEAMS-SEITE — Daten und Filter */
 
 const teams = [
   // Gruppe A
@@ -145,9 +143,7 @@ function initTeams() {
 }
 
 
-/* ========================================
-   QUIZ DATEN
-   ======================================== */
+/* QUIZ DATEN */
 
 const quizQuestions = [
 
@@ -205,9 +201,7 @@ const quizQuestions = [
 ];
 
 
-/* ========================================
-   QUIZ - mit Fortschrittsbalken & Zähler
-   ======================================== */
+/* QUIZ - mit Fortschrittsbalken & Zähler */
 
 function initQuiz() {
 
@@ -317,9 +311,7 @@ function initQuiz() {
 }
 
 
-/* ========================================
-   ALLE FUNKTIONEN STARTEN
-   ======================================== */
+/* ALLE FUNKTIONEN STARTEN */
 
 document.addEventListener("DOMContentLoaded", function () {
   initTeams();  // Für die Teams-Seite
