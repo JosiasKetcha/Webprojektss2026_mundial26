@@ -27,7 +27,9 @@ backBtn.addEventListener("click", function() {
 });
 
 
-/* TEAMS-SEITE — Daten und Filter */
+/* ========================================
+   TEAMS-SEITE — Daten und Filter
+   ======================================== */
 
 const teams = [
   // Gruppe A
@@ -142,6 +144,184 @@ function initTeams() {
   filterGruppe.addEventListener("change", renderTeams);
 }
 
+
+/* ========================================
+   QUIZ DATEN
+   ======================================== */
+
+const quizQuestions = [
+
+{
+    question: "Wie viele Teams nehmen an der FIFA WM 2026 teil?",
+    answers: ["32", "40", "48", "64"],
+    correct: 2
+},
+
+{
+    question: "Welche Länder richten die WM 2026 aus?",
+    answers: [
+        "USA, Kanada, Mexiko",
+        "USA, Brasilien, Mexiko",
+        "Kanada, Brasilien, Argentinien",
+        "Mexiko, Spanien, USA"
+    ],
+    correct: 0
+},
+
+{
+    question: "Wie viele Gruppen gibt es bei der WM 2026?",
+    answers: ["8", "10", "12", "16"],
+    correct: 2
+},
+
+{
+    question: "Welches Land ist Titelverteidiger?",
+    answers: [
+        "Frankreich",
+        "Argentinien",
+        "Brasilien",
+        "Deutschland"
+    ],
+    correct: 1
+},
+
+{
+    question: "Wie viele Spiele werden insgesamt ausgetragen?",
+    answers: ["64", "80", "92", "104"],
+    correct: 3
+},
+
+{
+    question: "In welcher Stadt findet das Finale statt?",
+    answers: [
+        "Los Angeles",
+        "Dallas",
+        "New York",
+        "Toronto"
+    ],
+    correct: 2
+}
+
+];
+
+
+/* ========================================
+   QUIZ - mit Fortschrittsbalken & Zähler
+   ======================================== */
+
+function initQuiz() {
+
+    const questionElement = document.getElementById("question");
+    if (!questionElement) return;
+
+    const answerButtons = document.querySelectorAll(".answer-btn");
+    const nextBtn = document.getElementById("nextBtn");
+    const quizContainer = document.getElementById("quizContainer");
+    const resultBox = document.getElementById("resultBox");
+    const scoreText = document.getElementById("scoreText");
+
+    // Fortschrittsbalken und Zähler
+    const progressFill = document.getElementById("progressFill");
+    const questionCounter = document.getElementById("questionCounter");
+
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = false;
+
+    function showQuestion() {
+        const current = quizQuestions[currentQuestion];
+
+        // Frage anzeigen
+        questionElement.textContent = current.question;
+
+        // Fortschritt aktualisieren
+        const progress = (currentQuestion / quizQuestions.length) * 100;
+        if (progressFill) {
+            progressFill.style.width = progress + "%";
+        }
+        if (questionCounter) {
+            questionCounter.textContent = "Frage " + (currentQuestion + 1) + " von " + quizQuestions.length;
+        }
+
+        // Antwort-Buttons zurücksetzen
+        answerButtons.forEach(function(btn, index) {
+            btn.textContent = current.answers[index];
+            btn.disabled = false;
+            btn.classList.remove("correct", "wrong");
+        });
+
+        answered = false;
+        nextBtn.disabled = true;
+        nextBtn.style.opacity = "0.5";
+    }
+
+    // Antwort-Click mit addEventListener
+    answerButtons.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            if (answered) return;
+            answered = true;
+
+            const index = parseInt(btn.dataset.index);
+            const current = quizQuestions[currentQuestion];
+
+            // Alle Buttons deaktivieren
+            answerButtons.forEach(function(b) {
+                b.disabled = true;
+            });
+
+            // Richtige Antwort markieren
+            answerButtons.forEach(function(b, i) {
+                if (i === current.correct) {
+                    b.classList.add("correct");
+                }
+            });
+
+            // Benutzerantwort prüfen
+            if (index === current.correct) {
+                btn.classList.add("correct");
+                score++;
+            } else {
+                btn.classList.add("wrong");
+            }
+
+            // Next-Button aktivieren
+            nextBtn.disabled = false;
+            nextBtn.style.opacity = "1";
+        });
+    });
+
+    // Nächste Frage
+    nextBtn.addEventListener("click", function() {
+        currentQuestion++;
+
+        if (currentQuestion < quizQuestions.length) {
+            showQuestion();
+        } else {
+            // Quiz beendet
+            quizContainer.style.display = "none";
+            resultBox.style.display = "block";
+            scoreText.textContent = "Du hast " + score + " von " + quizQuestions.length + " Fragen richtig beantwortet!";
+
+            // Fortschrittsbalken auf 100%
+            if (progressFill) {
+                progressFill.style.width = "100%";
+            }
+            if (questionCounter) {
+                questionCounter.textContent = "Frage " + quizQuestions.length + " von " + quizQuestions.length;
+            }
+        }
+    });
+
+    // Erste Frage anzeigen
+    showQuestion();
+}
+
+
+/* ========================================
+   ALLE FUNKTIONEN STARTEN
+   ======================================== */
+
 document.addEventListener("DOMContentLoaded", function () {
-  initTeams();
+  initTeams();  // Für die Teams-Seite
+  initQuiz();   // Für die Quiz-Seite
 });

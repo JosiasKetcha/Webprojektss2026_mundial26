@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,31 +10,26 @@
     <meta name="keywords" content="WM 2026, Spielplan, Spielorte, Gruppenphase, Achtelfinale">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;
-    1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <meta property="og:title" content="Spielplan - Mundial26 | FIFA WM 2026">
     <meta property="og:description" content="Der komplette Spielplan der FIFA WM 2026 - alle Spiele, Spielorte und Anstoßzeiten.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="de_DE">
     <meta property="og:image" content="images/mundial-og-image.png">
-
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Inspirationsquelle für den Header: https://www.fifa.com/-->
+    <!--  HEADER  -->
+    <!-- Inspirationsquelle für den Header: https://www.fifa.com/ -->
     <div class="sticky-header">
         <header class="navbar">
 
@@ -43,7 +39,6 @@
             </div>
 
             <div class="buttons">
-
                 <!--Burger-Button (nur auf Mobilgeräten sichtbar)-->
                 <button class="burger" id="burgerBtn" aria-label="Menü öffnen">
                     <span></span>
@@ -51,7 +46,6 @@
                     <span></span>
                 </button>
             </div>
-            
 
             <!--Navigationslinks-->
             <nav class="nav-links" id="navLinks">
@@ -62,10 +56,13 @@
             </nav>
 
         </header>
+
         <!--Black banner unter dem Navbar-->
         <div class="black-banner">
             <div class="banner-content">
-                <img src="images/WC26_Logo.avif" alt="WC26-Logo" class="wc-logo" />
+                <a href="index.html" class="wc-logo-link">
+                    <img src="images/WC26_Logo.avif" alt="WC26-Logo - Zurück zur Startseite" class="wc-logo"/>
+                </a>
                 <div class="banner-text">
                     <span class="banner-title">FIFA-FUSSBALL-</span>
                     <span class="banner-title">WELTMEISTERSCHAFT</span>
@@ -82,49 +79,73 @@
 
     </div>
 
+    <!-- MAIN  -->
     <main>
 
-<section class="anstosszeiten">
-    <br> <h1>Anstoßzeiten</h1> <br>
-    <p>Hier findest du die aktuellen Anstoßzeiten der FIFA WM 2026.</p> <br>
+        <!-- SPIELPLAN-SEITE -->
+        <section class="spielplan-section">
+            <div class="container">
 
-    <div class="iframe-wrapper">
-        <iframe
-            class="iframe-widget-spielplan"
-            src="https://anstosszeiten.de/widget/vor-mitternacht/"
-            title="WM 2026 Anstoßzeiten">
-        </iframe>
-    </div>
-</section>
+                <!-- Header mit Bild -->
+                <div class="spielplan-header">
+                    <h1>Spielplan</h1>
+                    <p class="spielplan-intro">
+                        Hier findest du den kompletten Spielplan der FIFA WM 2026 – alle Spiele, Spielorte und Anstoßzeiten auf einen Blick.
+                    </p>
+
+                    <!-- Spielplan-Bild (wie auf Teamseite) // Bild erstellt durch Copilot -->
+                    <img src="images/Copilot_20260625_165347.png" alt="WM 2026 Spielplan Illustration" class="img" />
+                </div>
+
+                <!-- Anstoßzeiten Widget -->
+                <div class="anstosszeiten-wrapper">
+                    <h2>Anstoßzeiten</h2>
+                    <p class="anstosszeiten-info">
+                        Alle Spiele mit Uhrzeiten und Spielorten.
+                    </p>
+
+
+                    <!-- Widget eingebunden und NICHT selbst programmiert -->
+                    <!-- Widget-Box (weiße Box mit Schatten) -->
+                    <div class="widget-box">
+                        <div class="iframe-wrapper">
+                            <iframe
+                                src="https://anstosszeiten.de/widget/vor-mitternacht/"
+                                title="WM 2026 Anstoßzeiten"
+                                class="widget-iframe">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
 
     </main>
 
-
-
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-container">
                 <div class="logo-text">
-                    MUNDIAL26
-                </div> <br>
+                    <a href="index.html" class="logo-mundial-white">MUNDIAL26</a>
+                </div>
 
-                <div class="footer-links" >
+                <div class="footer-links">
                     <a href="index.html">Home</a>
                     <a href="teams.html">Teams</a>
                     <a href="spielplan.html">Spielplan</a>
                     <a href="quiz.html">Quiz</a>
-                </div> <br>
-                
+                </div>
+
                 <p class="text-footer">© 2026 Mundial26 <br> Hochschule Worms <br> Webprojekt SS2026 <br> Alle Rechte vorbehalten</p>
-
             </div>
-
         </div>
-        
     </footer>
 
-
-
+    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
+
 </body>
+
 </html>
