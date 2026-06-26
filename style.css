@@ -560,9 +560,6 @@ article{
     .img1 {
         height: 650px;
     }
-    .img{
-
-    }
  
     h1 { font-size: 58px;  margin-top: 3rem;}
     h2 { font-size: 48px; }
@@ -591,8 +588,6 @@ article{
  
 }
 
-/*------------------*/
-
 
 /* SPIELPLAN-SEITE */
 
@@ -607,17 +602,14 @@ article{
 }
 
 .spielplan-header h1 {
-    font-size: 2rem;
     color: #003b89;
     padding: 0;
     margin-bottom: 0.5rem;
-    margin-top: 2rem;             /* Abstand zum Banner */
+    margin-top: 0rem;             /* Abstand zum Banner */
 }
 
 .spielplan-intro {
     text-align: center;
-    font-size: 1rem;
-    color: #555;
     max-width: 700px;
     margin: 0 auto 1.5rem auto;
     padding: 0 1rem;
@@ -642,8 +634,6 @@ article{
 
 .anstosszeiten-info {
     text-align: center;
-    font-size: 1rem;
-    color: #555;
     margin-bottom: 1.5rem;
 }
 
@@ -686,16 +676,13 @@ article{
 }
 
 .quiz-section h1 {
-    font-size: 2rem;
     color: #003b89;
     padding: 0;
-    margin-top: 2rem;             /* Abstand zum Banner */
+    margin-bottom: 1rem;             /* Abstand zum Text unten */
 }
 
 .quiz-intro {
     text-align: center;
-    font-size: 1rem;
-    color: #555;
     margin-bottom: 1.5rem;
 }
 
@@ -883,15 +870,7 @@ article{
 @media screen and (min-width: 792px) {
 
     /* Spielplan */
-    .spielplan-header h1 {
-        font-size: 3rem;
-    }
-    .spielplan-intro {
-        font-size: 1.1rem;
-    }
-    .anstosszeiten-wrapper h2 {
-        font-size: 2.4rem;
-    }
+    
     .widget-iframe {
         height: 1200px;
         padding: 0 15rem;
@@ -911,9 +890,7 @@ article{
 @media screen and (min-width: 1200px) {
 
     /* Spielplan */
-    .spielplan-header h1 {
-        font-size: 3.5rem;
-    }
+    
     .widget-iframe {
         height: 1400px;
     }
