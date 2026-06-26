@@ -1,13 +1,11 @@
 // Burger-Button und Navigationsmenü abrufen
 const burgerBtn = document.getElementById("burgerBtn");
-const navLinks  = document.getElementById("navLinks");
+const navLinks = document.getElementById("navLinks");
 
 // Beim Klick auf den Burger-Button...
 burgerBtn.addEventListener("click", function() {
-
   // Klasse "open" hinzufügen oder entfernen
   navLinks.classList.toggle("open");
-
 });
 
 // Menü schließen, wenn ein Link angeklickt wird
@@ -141,6 +139,10 @@ function initTeams() {
   searchInput.addEventListener("input", renderTeams);
   filterGruppe.addEventListener("change", renderTeams);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  initTeams();
+});
 
 
 /* QUIZ DATEN */
