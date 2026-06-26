@@ -1,24 +1,24 @@
-/* STARTSEITE (HOME-PAGE)*/
-
-* {
+/*STARTSEITE(HOME-PAGE)*/
+*{
     box-sizing: border-box;
-    margin: 0;
+    margin:0;
     padding: 0;
 }
 
-body {
+body{
     font-family: "Google sans", sans-serif;
     display: grid;
     grid-template-rows: auto 1fr auto;  /* Header, Main, Footer */
-    min-height: 100vh;
+    min-height: 100vh;   /* volle Bildschirmhöhe */
+
 }
 
-html, body {
+html, body{
     scroll-behavior: smooth;
 }
 
 .sticky-header {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1;  /* nimmt alle Spalten */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -29,25 +29,26 @@ main {
     width: 100%;
 }
 
-footer {
+footer{
     width: 100%;
 }
 
-.hero {
+.hero{
     width: 100%;
     position: relative;
 }
 
+    
 
-/* NAVIGATION */
-
+/* Äußerer Rahmen der Navigationsleiste */
 .navbar {
     background-color: #003b89;
     height: 2.5rem;
     padding: 0 20px;
     width: 100%;
+    /* Flexbox: Logo links, Links rechts */
     display: flex;
-    align-items: center;
+    align-items: center;  
     justify-content: space-between;
 }
 
@@ -60,28 +61,27 @@ footer {
     align-items: center;
     gap: 18px;
 }
-
-.logo-mundial-white {
+.logo-mundial-white{
     color: white;
     text-decoration: none;
 }
-
-.buttons {
+.buttons{
     display: flex;
     gap: 15px;
 }
-
-.search-icon {
+.search-icon{
     background: none;
     border: none;
-    color: white;
+    color: white;        /* ← Farbe des Icons ändern */
     font-size: 18px;
     cursor: pointer;
     margin-right: 0px;
 }
 
+
+/* Der Burger-Button mit 3 Strichen */
 .burger {
-    display: flex;
+    display: flex;                 /* auf Desktop versteckt */
     flex-direction: column;
     gap: 5px;
     background: none;
@@ -90,6 +90,7 @@ footer {
     padding: 4px;
 }
 
+/* Jeder Strich des Burger-Buttons */
 .burger span {
     display: block;
     width: 20px;
@@ -98,22 +99,28 @@ footer {
     border-radius: 2px;
 }
 
+/* Navigationslinks nebeneinander */
 .nav-links {
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 40px;
+    flex-direction: column;      /* Links untereinander */
+    position: absolute;          /* schwebt über dem Inhalt */
+    top: 40px;                   /* direkt unter der Navbar */
+    left: auto;
     right: 0;
     width: 120px;
+    /*align-items: start;*/
     background-color: #003b89;
     padding: 10px;
     z-index: 200;
+
 }
 
+/* Menü anzeigen wenn Klasse "open" vorhanden */
 .nav-links.open {
     display: flex;
 }
 
+/* Einzelner Navigationslink */
 .link {
     color: #ffff;
     text-decoration: none;
@@ -121,17 +128,16 @@ footer {
     font-size: 11px;
     text-align: left;
     margin-bottom: 15px;
-    transition: color 0.9s;
+    transition: color 0.9s;        /* weiche Animation beim Hovern */
 }
 
+/* Aktiver Link (aktuelle Seite) */
 .link.active {
     color: #1eff00;
     font-weight: bold;
 }
 
-
-/* SCHWARZER BANNER */
-
+/* Schwarzer Bereich unter der Navbar */
 .black-banner {
     background-color: #000000;
     width: 100%;
@@ -142,38 +148,26 @@ footer {
     justify-content: space-between;
 }
 
+/* Logo und Text nebeneinander zentriert */
 .banner-content {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
+/* WC26-Logo Größe */
 .wc-logo {
     width: auto;
     height: 50px;
 }
 
-.wc-logo-link {
-    display: inline-block;
-    text-decoration: none;
-    border: none;
-    outline: none;
-}
-
-.wc-logo-link img {
-    display: block;
-    transition: transform 0.2s ease;
-}
-
-.wc-logo-link:hover img {
-    transform: scale(1.05);
-}
-
+/* Textbereich: Zeilen untereinander */
 .banner-text {
     display: flex;
     flex-direction: column;
 }
 
+/* Haupttext in Weiß */
 .banner-title {
     color: white;
     font-size: 12px;
@@ -181,6 +175,7 @@ footer {
     letter-spacing: 0px;
 }
 
+/* Zurück-Button */
 .back-btn {
     background: none;
     border: 1px solid white;
@@ -195,42 +190,51 @@ footer {
     transition: background-color 0.6s;
 }
 
+.hero{
+    position: relative;
+    width: 100%;
+}
 
-/* CONTAINER & BILDER */
-
-.container {
+.container{
     max-width: 1140px;
     margin: 0 auto;
-}
 
-.img {
+}
+.img{
     height: auto;
     display: block;
-    margin: 1rem auto;
+    margin: 1rem auto ;
     width: 91%;
     border-radius: 15px;
 }
 
-.img1 {
+.iframe-video1{
+    height: 200px;
+    margin: 1rem ;
+    width: 91%;
+    border-radius: 15px;
+}
+
+.iframe-wrapper{
+    width: 100%;
+    height: 1200px;
+    border: none;
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+.img1{
     margin-top: 0;
     width: 100%;
-    height: auto;
+    height: auto;          /* feste Höhe */
     border-radius: 0px;
-    object-fit: cover;
-    object-position: center;
+    object-fit: cover;      /* Bild füllt den Bereich ohne Verzerrung */
+    object-position: center; /* zentriert */
 }
 
-.iframe-video1 {
-    height: 200px;
-    margin: 1rem;
-    width: 91%;
-    border-radius: 15px;
-}
-
-
-/* HERO & CONTENT */
-
-.hero-content {
+.hero-content{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -241,61 +245,53 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    justify-items: center;
-    text-align: center;
+    justify-items: center;  
+    text-align: center;      
 }
 
 .gast-content {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    justify-items: center;
+    justify-items: center;  
     text-align: center;
 }
 
 
-/* TYPOGRAPHIE */
-
-h1, h2, h3, h4, h5 {
+h1,h2,h3,h4,h5{
     padding: 1rem 1rem;
     text-align: center;
 }
 
-p {
+p{
     font-size: 14px;
+    text-align: left;
+    text-justify: auto;
     padding: 0 1rem;
     line-height: 1.4;
     text-align: left;
 }
 
-section {
+section{
+    margin-bottom: 1rem;
+}
+article{
     margin-bottom: 1rem;
 }
 
-article {
-    margin-bottom: 1rem;
+.h1-fifa{
+    text-align: center;  
 }
-
-.h1-fifa {
-    text-align: center;
-}
-
-.länder {
+.länder{
     color: #003b89;
 }
-
-.h3-länder {
+.h3-länder{
     color: #003b89;
 }
-
-.p-info-karten {
+.p-info-karten{
     color: #003b89;
 }
-
-
-/* FOOTER */
-
-.footer-container {
+.footer-container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -303,18 +299,16 @@ article {
     padding: 10px;
     margin-top: 3rem;
 }
-
-.footer-links {
+.footer-links{
     align-items: center;
 }
-
-.footer-links a {
+.footer-links a{
     color: white;
     font-size: 11px;
     transition: color 0.3s;
 }
 
-.text-footer {
+.text-footer{
     text-align: center;
     font-weight: 100;
     line-height: 1.8;
@@ -323,8 +317,7 @@ article {
 }
 
 
-/* TEAMS-SEITE */
-
+/* Filter-Bereich */
 .filters {
     display: flex;
     flex-wrap: wrap;
@@ -355,13 +348,16 @@ article {
     font-size: 0.9rem;
 }
 
+/* Teams Grid — CSS Grid responsive ohne Media Query */
 .teams-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 1rem;
+    margin-top: 1.5rem;
     margin: 0 1rem;
 }
 
+/* Einzelne Team-Karte */
 .team-card {
     background-color: white;
     border: 1px solid #eee;
@@ -371,13 +367,13 @@ article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .team-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
 }
 
 .team-card img {
@@ -402,10 +398,206 @@ article {
 }
 
 
+/* Spielplan Widget */
+
+
+.iframe-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    max-height: 200vh;     /* jamais plus que 90% de l'écran visible */
+    overflow-y: auto;     /* scroll interne si le contenu dépasse */
+}
+
+.iframe-wrapper iframe {
+    width: 100%;
+    height: 1200px;
+    border: none;
+    border-radius: 12px;
+    display: block;
+    margin: 0;
+}
+
+
+/* DESKTOP und Tablets Landschaft — ab 792px */
+@media screen and (min-width: 792px) {
+ 
+    /* Burger verstecken, Navigation horizontal (Flexbox) */
+    .burger {
+        display: none;
+    }
+
+    .logo-mundial-white{
+        margin-left: 40px;
+    }
+ 
+    .wc-logo{
+        margin-left: 40px;
+        width: 30px;
+    }
+    
+    .back-btn{
+        margin-right: 40px;
+    }
+ 
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        margin: 0 40px;
+        gap: 50px;
+    }
+ 
+    .link{
+        font-size: 15px;
+        margin-bottom: 0;
+    }
+ 
+    .link:hover {
+        color: #e5ff00;
+    }
+ 
+    .container{
+        padding: 0 2rem;
+    }
+ 
+    .img1 {
+        height: auto;
+    }
+ 
+    h1 { font-size: 48px; }
+    h2 { font-size: 38px; }
+    h3 { font-size: 28px; }
+    h4 { font-size: 25px; }
+    p  { font-size: 16px; line-height: 1.6; }
+ 
+    /* Hero-Content - Bild und Text nebeneinander mit CSS Grid */
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 1rem;
+    }
+ 
+    /* Info-Karten — 3 Spalten mit CSS Grid */
+    .info-karten-content {
+        grid-template-columns: (repeat(3, 1fr));
+        align-items: start;
+        justify-items: center;
+    }
+ 
+    /* Gastgeberländer — 3 Spalten mit CSS Grid */
+    .gast-content {
+        grid-template-columns: 1fr;
+        align-items: start;
+        justify-items: center;
+    }
+ 
+    .gast-content h2 {
+        grid-column: 1 / -1;
+    }
+ 
+    /* Teams-Grid — größere Karten */
+    .teams-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+ 
+    .iframe-video1 {
+        height: 450px;
+    }
+    .iframe-video2 {
+        height: 250px;
+        margin-bottom: 2rem;
+    }
+
+    .filters {
+        gap: 5rem;
+        margin-top: 4rem;
+        padding: 1.25rem;
+       
+    }
+    
+    .anstosszeiten {
+        padding: 2rem;
+    }
+
+    .anstosszeiten h1 {
+        font-size: 2.6rem;
+    }
+
+    .anstosszeiten p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+ 
+    /* Footer — nebeneinander mit CSS Grid */
+    .footer-container {
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        text-align: left;
+        justify-items: start;
+        padding: 1.5rem 2rem;
+        margin-top: 4rem;
+    }
+
+    .footer-links a{
+        font-size: 13px;
+    }
+ 
+    .text-footer {
+        font-size: 13px;
+        text-align: center;
+    }
+ 
+}
+ 
+ 
+/* LARGE DESKTOP — ab 1200px */
+@media screen and (min-width: 1200px) {
+ 
+    .img1 {
+        height: 650px;
+    }
+    .img{
+
+    }
+ 
+    h1 { font-size: 58px;  margin-top: 3rem;}
+    h2 { font-size: 48px; }
+    h3 { font-size: 38px; }
+    h4 { font-size: 35px; }
+    p  { font-size: 18px; line-height: 1.6; }
+ 
+    .container {
+        padding: 0 1rem;
+    }
+ 
+    .iframe-video1 {
+        height: 500px;
+    }
+
+    .iframe-video2 {
+        margin-bottom: 4rem;
+    }
+
+    .filter-group label {
+        font-size: 1rem;
+        font-weight: 600;
+        
+    }
+
+ 
+}
+
+/*------------------*/
+
+
 /* SPIELPLAN-SEITE */
 
 .spielplan-section {
-    display: grid;
+    display: grid;                 /* Grid für zentrierte Ausrichtung */
     justify-items: center;
     padding: 2rem 0;
 }
@@ -419,7 +611,7 @@ article {
     color: #003b89;
     padding: 0;
     margin-bottom: 0.5rem;
-    margin-top: 2rem;
+    margin-top: 2rem;             /* Abstand zum Banner */
 }
 
 .spielplan-intro {
@@ -455,6 +647,7 @@ article {
     margin-bottom: 1.5rem;
 }
 
+/* Widget-Box für den Iframe */
 .widget-box {
     display: grid;
     justify-items: center;
@@ -466,14 +659,15 @@ article {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Iframe-Wrapper */
 .iframe-wrapper {
     width: 100%;
     display: grid;
     justify-items: center;
     box-sizing: border-box;
-   
 }
 
+/* Iframe selbst */
 .widget-iframe {
     width: 100%;
     height: 1800px;
@@ -495,6 +689,7 @@ article {
     font-size: 2rem;
     color: #003b89;
     padding: 0;
+    margin-top: 2rem;             /* Abstand zum Banner */
 }
 
 .quiz-intro {
@@ -617,7 +812,7 @@ article {
     cursor: default;
 }
 
-/* Ergebnis */
+/* Ergebnis-Box */
 #resultBox {
     display: none;
     text-align: center;
@@ -660,311 +855,12 @@ article {
 }
 
 
-/* RESPONSIVE: TABLETS & DESKTOP ab 792px */
-
-@media screen and (min-width: 792px) {
-
-    /* Burger verstecken */
-    .burger {
-        display: none;
-    }
-
-    .logo-mundial-white {
-        margin-left: 40px;
-    }
-
-    .wc-logo {
-        margin-left: 40px;
-        width: 30px;
-    }
-
-    .back-btn {
-        margin-right: 40px;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        background-color: transparent;
-        margin: 0 40px;
-        gap: 50px;
-    }
-
-    .link {
-        font-size: 15px;
-        margin-bottom: 0;
-    }
-
-    .link:hover {
-        color: #e5ff00;
-    }
-
-    .container {
-        padding: 0 2rem;
-    }
-
-    /* Typografie */
-    h1 {
-        font-size: 48px;
-    }
-    h2 {
-        font-size: 38px;
-    }
-    h3 {
-        font-size: 28px;
-    }
-    h4 {
-        font-size: 25px;
-    }
-    p {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-    /* Hero-Content - 2 Spalten */
-    .hero-content {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .img1 {
-        height: auto;
-    }
-
-    /* Info-Karten - 3 Spalten */
-    .info-karten-content {
-        grid-template-columns: repeat(3, 1fr);
-        align-items: start;
-        justify-items: center;
-    }
-
-    /* Gastgeberländer */
-    .gast-content {
-        grid-template-columns: 1fr;
-        align-items: start;
-        justify-items: center;
-    }
-
-    .gast-content h2 {
-        grid-column: 1 / -1;
-    }
-
-    /* Teams-Grid */
-    .teams-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    }
-
-    .filters {
-        gap: 5rem;
-        margin-top: 4rem;
-        padding: 1.25rem;
-    }
-
-    /* Videos */
-    .iframe-video1 {
-        height: 450px;
-    }
-    .iframe-video2 {
-        height: 250px;
-        margin-bottom: 2rem;
-    }
-
-    /* Footer */
-    .footer-container {
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
-        text-align: left;
-        justify-items: start;
-        padding: 1.5rem 2rem;
-        margin-top: 4rem;
-    }
-
-    .footer-links a {
-        font-size: 13px;
-    }
-
-    .text-footer {
-        font-size: 13px;
-        text-align: center;
-    }
-
-    /* Spielplan */
-    .spielplan-header h1 {
-        font-size: 3rem;
-    }
-
-    .spielplan-intro {
-        font-size: 1.1rem;
-    }
-
-    .anstosszeiten-wrapper h2 {
-        font-size: 2.4rem;
-    }
-
-    .widget-iframe {
-        height: 1200px;
-        padding: 0 15rem;
-    }
-
-    /* Quiz */
-    .answers {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .quiz-card h2 {
-        font-size: 1.4rem;
-    }
-}
-
-
-/* RESPONSIVE: LARGE DESKTOP ab 1200px */
-
-@media screen and (min-width: 1200px) {
-
-    .img1 {
-        height: 650px;
-    }
-
-    h1 {
-        font-size: 58px;
-        margin-top: 3rem;
-    }
-    h2 {
-        font-size: 48px;
-    }
-    h3 {
-        font-size: 38px;
-    }
-    h4 {
-        font-size: 35px;
-    }
-    p {
-        font-size: 18px;
-        line-height: 1.6;
-    }
-
-    .container {
-        padding: 0 1rem;
-    }
-
-    .iframe-video1 {
-        height: 500px;
-    }
-
-    .iframe-video2 {
-        margin-bottom: 4rem;
-    }
-
-    .filter-group label {
-        font-size: 1rem;
-        font-weight: 600;
-    }
-
-    .spielplan-header h1 {
-        font-size: 3.5rem;
-    }
-
-    .widget-iframe {
-        height: 1400px;
-    }
-    .widget-box{
-        width: 1000px;
-    }
-
-   
-}
-
-   
-/* SPIELPLAN-SEITE */
-
-.spielplan-section {
-    display: grid;
-    justify-items: center;
-    padding: 2rem 0;
-}
-
-.spielplan-header {
-    text-align: center;
-}
-
-.spielplan-header h1 {
-    font-size: 2rem;
-    color: #003b89;
-    padding: 0;
-    margin-bottom: 0.5rem;
-    margin-top: 2rem;
-}
-
-.spielplan-intro {
-    text-align: center;
-    font-size: 1rem;
-    color: #555;
-    max-width: 700px;
-    margin: 0 auto 1.5rem auto;
-    padding: 0 1rem;
-}
-
-.anstosszeiten-wrapper {
-    text-align: center;
-    display: grid;
-    justify-items: center;
-    gap: 0.5rem;
-    width: 100%;
-    margin-top: 2rem;
-}
-
-.anstosszeiten-wrapper h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    color: #003b89;
-    padding: 0;
-    margin-bottom: 0.5rem;
-}
-
-.anstosszeiten-info {
-    text-align: center;
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-}
-
-.widget-box {
-    display: grid;
-    justify-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.5rem 1rem;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.iframe-wrapper {
-    width: 100%;
-    display: grid;
-    justify-items: center;
-    box-sizing: border-box;
-}
-
-.widget-iframe {
-    width: 100%;
-    height: 1800px;
-    border: none;
-    border-radius: 12px;
-    background: white;
-    padding: 0 15rem;
-}
-
-/* Anpassung auf Mobile */
+/* MOBILE ANPASSUNG FÜR SPIELPLAN */
 @media screen and (max-width: 991px) {
     .widget-iframe {
         height: 1200px;
         padding: 0 0.5rem;
     }
-
     .widget-box {
         padding: 0.5rem;
         border-radius: 12px;
@@ -976,334 +872,26 @@ article {
         height: 900px;
         padding: 0;
     }
-
     .widget-box {
         padding: 0.3rem;
         border-radius: 8px;
     }
 }
 
-/* QUIZ-SEITE */
-
-.quiz-section {
-    padding: 2rem 1rem;
-    text-align: center;
-}
-
-.quiz-section h1 {
-    font-size: 3rem;
-    color: #003b89;
-    padding: 0;
-    margin-top: 2rem;   
-}
-
-.quiz-intro {
-    text-align: center;
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-}
-
-/* Fortschrittsbalken */
-.progress-bar {
-    max-width: 400px;
-    height: 6px;
-    background: #ddd;
-    border-radius: 3px;
-    margin: 0 auto 0.3rem auto;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    width: 0%;
-    background: #003b89;
-    border-radius: 3px;
-    transition: width 0.4s ease;
-}
-
-.question-counter {
-    font-size: 0.85rem;
-    color: #888;
-    margin-bottom: 1.5rem;
-}
-
-/* Quiz-Container */
-#quizContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-/* Quiz-Karte */
-.quiz-card {
-    background: white;
-    border-radius: 16px;
-    padding: 2rem 1.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    max-width: 700px;
-    width: 100%;
-    margin: 0 auto 1.5rem auto;
-}
-
-.quiz-card h2 {
-    font-size: 1.2rem;
-    color: #222;
-    padding: 0 0 1rem 0;
-    border-bottom: 2px solid #f0f0f0;
-}
-
-/* Antwort-Buttons */
-.answers {
-    display: grid;
-    gap: 0.8rem;
-    margin-top: 1.5rem;
-}
-
-.answer-btn {
-    padding: 0.9rem 1.2rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    cursor: pointer;
-    background: #fafafa;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: all 0.2s ease;
-    text-align: left;
-}
-
-.answer-btn:hover:not(:disabled) {
-    background: #f0f4ff;
-    border-color: #003b89;
-}
-
-.answer-btn.correct {
-    background: #d4edda;
-    border-color: #28a745;
-}
-
-.answer-btn.wrong {
-    background: #f8d7da;
-    border-color: #dc3545;
-}
-
-.answer-btn:disabled {
-    cursor: default;
-    opacity: 0.7;
-}
-
-/* Next Button */
-#nextBtn {
-    display: block;
-    margin: 0 auto;
-    background: #003b89;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 30px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background 0.3s ease;
-}
-
-#nextBtn:hover {
-    background: #002f6c;
-}
-
-#nextBtn:disabled {
-    opacity: 0.5;
-    cursor: default;
-}
-
-/* Ergebnis */
-#resultBox {
-    display: none;
-    text-align: center;
-    background: white;
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    max-width: 500px;
-    margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-#resultBox h2 {
-    font-size: 1.8rem;
-    color: #003b89;
-    padding: 0;
-}
-
-#scoreText {
-    text-align: center;
-    font-size: 1.2rem;
-    margin: 1rem 0;
-}
-
-.restart-btn {
-    display: block;
-    margin: 0 auto;
-    background: #003b89;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 30px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background 0.3s ease;
-}
-
-.restart-btn:hover {
-    background: #002f6c;
-}
-
 
 /* RESPONSIVE: TABLETS & DESKTOP ab 792px */
-
 @media screen and (min-width: 792px) {
-
-    /* Burger verstecken */
-    .burger {
-        display: none;
-    }
-
-    .logo-mundial-white {
-        margin-left: 40px;
-    }
-
-    .wc-logo {
-        margin-left: 40px;
-        width: 30px;
-    }
-
-    .back-btn {
-        margin-right: 40px;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        background-color: transparent;
-        margin: 0 40px;
-        gap: 50px;
-    }
-
-    .link {
-        font-size: 15px;
-        margin-bottom: 0;
-    }
-
-    .link:hover {
-        color: #e5ff00;
-    }
-
-    .container {
-        padding: 0 2rem;
-    }
-
-    /* Typografie */
-    h1 {
-        font-size: 48px;
-    }
-    h2 {
-        font-size: 38px;
-    }
-    h3 {
-        font-size: 28px;
-    }
-    h4 {
-        font-size: 25px;
-    }
-    p {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-    /* Hero-Content - 2 Spalten */
-    .hero-content {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .img1 {
-        height: auto;
-    }
-
-    /* Info-Karten - 3 Spalten */
-    .info-karten-content {
-        grid-template-columns: repeat(3, 1fr);
-        align-items: start;
-        justify-items: center;
-    }
-
-    /* Gastgeberländer */
-    .gast-content {
-        grid-template-columns: 1fr;
-        align-items: start;
-        justify-items: center;
-    }
-
-    .gast-content h2 {
-        grid-column: 1 / -1;
-    }
-
-    /* Teams-Grid */
-    .teams-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    }
-
-    .filters {
-        gap: 5rem;
-        margin-top: 4rem;
-        padding: 1.25rem;
-    }
-
-    /* Videos */
-    .iframe-video1 {
-        height: 450px;
-    }
-    .iframe-video2 {
-        height: 250px;
-        margin-bottom: 2rem;
-    }
-
-    /* Footer */
-    .footer-container {
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
-        text-align: left;
-        justify-items: start;
-        padding: 1.5rem 2rem;
-        margin-top: 4rem;
-    }
-
-    .footer-links a {
-        font-size: 13px;
-    }
-
-    .text-footer {
-        font-size: 13px;
-        text-align: center;
-    }
 
     /* Spielplan */
     .spielplan-header h1 {
         font-size: 3rem;
     }
-
     .spielplan-intro {
         font-size: 1.1rem;
     }
-
     .anstosszeiten-wrapper h2 {
         font-size: 2.4rem;
     }
-
     .widget-iframe {
         height: 1200px;
         padding: 0 15rem;
@@ -1313,64 +901,23 @@ article {
     .answers {
         grid-template-columns: 1fr 1fr;
     }
-
     .quiz-card h2 {
         font-size: 1.4rem;
     }
 }
 
 
-/* LARGE DESKTOP ab 1200px */
-
+/* RESPONSIVE: LARGE DESKTOP ab 1200px */
 @media screen and (min-width: 1200px) {
 
-    .img1 {
-        height: 650px;
-    }
-
-    h1 {
-        font-size: 58px;
-        margin-top: 3rem;
-    }
-    h2 {
-        font-size: 48px;
-    }
-    h3 {
-        font-size: 38px;
-    }
-    h4 {
-        font-size: 35px;
-    }
-    p {
-        font-size: 18px;
-        line-height: 1.6;
-    }
-
-    .container {
-        padding: 0 1rem;
-    }
-
-    .iframe-video1 {
-        height: 500px;
-    }
-
-    .iframe-video2 {
-        margin-bottom: 4rem;
-    }
-
-    .filter-group label {
-        font-size: 1rem;
-        font-weight: 600;
-    }
-
+    /* Spielplan */
     .spielplan-header h1 {
         font-size: 3.5rem;
     }
-
     .widget-iframe {
         height: 1400px;
     }
-    .widget-box{
+    .widget-box {
         width: 1000px;
     }
 }
