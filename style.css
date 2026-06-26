@@ -283,6 +283,7 @@ article{
     text-align: center;  
 }
 .länder{
+    font-size: 20px;
     color: #003b89;
 }
 .h3-länder{
@@ -472,6 +473,10 @@ article{
     h3 { font-size: 28px; }
     h4 { font-size: 25px; }
     p  { font-size: 16px; line-height: 1.6; }
+
+    .länder{
+        font-size: 35px;
+    }
  
     /* Hero-Content - Bild und Text nebeneinander mit CSS Grid */
     .hero-content {
@@ -605,7 +610,6 @@ article{
     color: #003b89;
     padding: 0;
     margin-bottom: 0.5rem;
-    margin-top: 0rem;             /* Abstand zum Banner */
 }
 
 .spielplan-intro {
