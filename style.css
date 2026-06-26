@@ -398,6 +398,12 @@ article{
     padding: 0;
 }
 
+.tabellenstand-img {
+    max-width: 100%;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 10px;
+}
 
 /* Spielplan Widget */
 
