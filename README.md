@@ -2,9 +2,11 @@
 
 Eine responsive Webseite rund um die FIFA Fußball-Weltmeisterschaft 2026 in den USA, Kanada und Mexiko. Sie bietet eine Startseite mit den wichtigsten Fakten, eine durchsuchbare Übersicht aller 48 Teams, den Spielplan und ein Quiz.
 
+**Online:** https://josiasketcha.github.io/Webprojektss2026_mundial26/
+
 > **Kontext:** Webprojekt im Zweierteam, Hochschule Worms, Sommersemester 2026.
 
-![Screenshot der Quiz-Seite](docs/screenshot.png)
+![Screenshot der Teams-Seite](docs/screenshot.png)
 
 ## Ziel
 
@@ -25,9 +27,9 @@ Das Projekt zeigt die Grundlagen moderner Webentwicklung ohne Framework:
 | `spielplan.html` | Spielplan mit allen Spielen, Spielorten und Anstoßzeiten |
 | `quiz.html` | Quiz mit sechs Fragen, Fortschrittsbalken, Zähler, direkter Rückmeldung (richtig grün, falsch rot) und Ergebnis am Ende |
 
-![Quiz mit Rückmeldung nach einer Antwort](docs/quiz.png)
+![Suche nach Teams](docs/suche.png)
 
-*Nach einer Antwort zeigt das Quiz sofort die richtige Lösung an.*
+*Die Suche filtert die Teams schon während der Eingabe, hier nach „de“.*
 
 ## Funktionen
 
@@ -83,7 +85,7 @@ Webprojektss2026_mundial26/
 ├── images/          # Logos, Favicons, Illustrationen, Open-Graph-Bild
 ├── docs/
 │   ├── screenshot.png
-│   └── quiz.png
+│   └── suche.png
 └── README.md
 ```
 
